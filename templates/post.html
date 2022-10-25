@@ -1,0 +1,103 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/edit-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{student.name}}</h1>
+                    <h2 class="subheading">{{student.mother}}</h2>
+                    <span class="meta">Admission taken by
+              <a href="#">{{student.admitted_by}}</a>
+              on {{student.date_of_registration}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Sr. No.</th>
+                        <th scope="col">Field</th>
+                        <th scope="col">Data</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Full Name</td>
+                        <td>{{student.name}}</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Mother's Name</td>
+                        <td>{{student.mothers_name}}</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Course Enrolled in</td>
+                        <td>{{student.course}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>College Name</td>
+                        <td>{{student.college}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Stream</td>
+                        <td>{{student.stream}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Date of Birth</td>
+                        <td>{{student.dob}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Student's Contact number</td>
+                        <td>{{student.contact}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Parent/Guardian's Contact number</td>
+                        <td>{{student.parents}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Address</td>
+                        <td>{{student.address}}</td>
+                    </tr>
+                    <tr>
+                        <tr>
+                        <th scope="row">10</th>
+                        <td>Total Fees</td>
+                        <td>Rs. {{student.total_fees}}</td>
+                    </tr>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="{{url_for('edit_student', student_id=student.id)}}">Edit
+                        Student's details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+{% include "footer.html" %}

@@ -1,0 +1,52 @@
+
+{% extends 'bootstrap/base.html' %}
+
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/edit-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            {% if is_edit: %}
+              <h1>Any Corrections?</h1>
+              <span class="subheading">Edit the details of the student.</span>
+
+            {%else%}
+              <h1>New Student!</h1>
+              <span class="subheading">Add a new student into the database.</span>
+
+            {%endif%}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+          <!-- This is where the form will go -->
+<!--         Load ckeditor-->
+<!--        {{ ckeditor.load() }}-->
+
+<!--        #Configure the ckeditor to tell it which field in WTForm will need to be a CKEditor.-->
+
+<!--        #Add WTF quickform-->
+        {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+<!--        {{ ckeditor.config(name='body') }}-->
+
+
+      </div>
+    </div>
+  </div>
+
+{% include "footer.html" %}
+{% endblock %}
