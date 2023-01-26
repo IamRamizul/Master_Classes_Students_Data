@@ -34,7 +34,7 @@ class Student(db.Model):
     admitted_by = db.Column(db.String(250), nullable=False)
     date_of_registration = db.Column(db.String(250), nullable=False)
     total_fees = db.Column(db.Integer, nullable = True)
-# db.create_all()
+db.create_all()
 ##WTForm
 class CreateStudentForm(FlaskForm):
     name = StringField("Student's Full name: (Surname + Name + Father's name)", validators=[DataRequired()])
